@@ -10,22 +10,16 @@
 <style></style>
 
 <body>
-    <h1>Index html</h1>
+    <h1>Entry point</h1>
     <nav>
         <button onclick="showObject('home')">Home</button>
         <button onclick="showObject('about')">About</button>
     </nav>
 
     <div id="container"></div>
-    <script src="home.js"></script>
-    <script src="about.js"></script>
+    <script type="module" src="main.js"></script>
     <script>
-        let container = document.getElementById('container')
-        container.innerHTML = home
-        function showObject(id) {
-            if (id == 'home') container.innerHTML = home
-            else if (id == 'about') container.innerHTML = about
-        }
+        
     </script>
 </body>
 
