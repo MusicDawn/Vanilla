@@ -1,11 +1,11 @@
 import home from '../views/home.js'
 import about from '../views/about.js'
 
-let app = document.getElementById('app')
-app.innerHTML = home
+let container = document.getElementById('container')
+container.innerHTML = home
 function router(id) {
-    if (id == 'home') app.innerHTML = home
-    else if (id == 'about') app.innerHTML = about
+    if (id == 'home') container.innerHTML = home
+    else if (id == 'about') container.innerHTML = about
 }
 
 export default router
