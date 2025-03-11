@@ -1,8 +1,11 @@
-const nav = ` <nav>
-    <a href="#/">Home<a>
-    <a href="#/about">About<a>
+import RouterView from "./components/RouterView.js"
+import RouterLink from "./components/RouterLink.js"
+
+const nav = `<nav>
+    <router-link>Home</router-link>
+    <router-link>About</router-link>
 </nav>
-<div id="container"></div>
+<router-view></router-view>
 `
 
 const App = document.getElementById('app').innerHTML = nav
