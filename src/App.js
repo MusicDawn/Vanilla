@@ -1,9 +1,12 @@
 import RouterView from "./components/RouterView.js"
 import RouterLink from "./components/RouterLink.js"
+import HelloWorld from "./components/HelloWorld.js"
 
-const nav = `<nav>
-    <router-link>Home</router-link>
-    <router-link>About</router-link>
+const nav = `
+<hello-world msg="Hello World"></hello-world>
+<nav>
+    <router-link to="#/">Home</router-link>
+    <router-link to="#/about">About</router-link>
 </nav>
 <router-view></router-view>
 `

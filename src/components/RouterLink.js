@@ -1,17 +1,40 @@
 class RouterLink extends HTMLElement {
-    constructor() {
-        //Always call super first in constructor.
-        super();
-        this.attachShadow({ mode: "open" })
-    }
+  constructor() {
+    //Always call super first in constructor.
+    super();
+    this.attachShadow({ mode: "open" });
+  }
 
-    connectedCallback() {
-        this.shadowRoot.innerHTML = `
-        <a href="#"><slot></slot></a>
-    `
+  static get observedAttributes() {
+    return ["to"];
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === "to") {
+      this.render();
     }
+  }
+
+  connectedCallback() {
+    this.render();
+  }
+
+  render() {
+    const to = this.getAttribute('to') || '/';
+    this.shadowRoot.innerHTML = `
+        <style>
+            a
+            {
+                text-decoration: none;
+                color: green;
+                padding: 0 10px;
+            }
+        </style>        
+        <a href="${to}"><slot></slot></a>
+    `;
+  }
 }
 
-customElements.define('router-link', RouterLink)
+customElements.define("router-link", RouterLink);
 
-export default RouterLink
+export default RouterLink;
