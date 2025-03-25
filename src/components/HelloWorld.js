@@ -8,6 +8,7 @@ class HelloWorld extends RouterClass {
  
   
   render() {
+    // getAttribute as method
     const msg = this.getAttribute('msg') || 'Add msg';
     this.shadowRoot.innerHTML = `
           <style>
@@ -23,6 +24,7 @@ class HelloWorld extends RouterClass {
   }
 }
 
+//Here we create the custom tag, as <hello-world></hello-world>
 customElements.define("hello-world", HelloWorld);
 
 export default HelloWorld;

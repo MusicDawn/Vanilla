@@ -28,6 +28,9 @@
     <h2>Template</h2>
     <a href="notemplate.html">Template</a>
     <button onclick="toggle()">Click me!</button>
+    <!-- Template as a tag give the potential to use it's contents when they
+    are needed, but it doesn't take any space in the DOM when the contents
+    are not needed! -->
     <template>
         <div class="hidden"></div>
     </template>
@@ -39,7 +42,9 @@
         let bool = false
         function toggle() {
             if(!bool){
+            // cloneNode basicly clones whatever you ask it to clone, in out case clones the template content (<div class="hidden"></div>)
             let clone = template.content.cloneNode(true)
+            // insertBefore it insert before the affected (document.querySelector('.affected')) the clone (<div class="hidden"></div>)
             document.body.insertBefore(clone, affected)
             bool = true
             } else if (bool){

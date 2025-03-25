@@ -13,6 +13,7 @@ class RouterView extends RouterClass {
     }
 }
 
+//Here we create the custom tag, as <router-view></router-view>
 customElements.define('router-view', RouterView)
 
 export default RouterView

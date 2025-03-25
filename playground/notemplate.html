@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>No Template</title>
 </head>
+
 <style>
     .modal {
         display: block;
@@ -41,16 +42,16 @@
         if (!bool) {
             modal.classList.add("modal")
             modal.textContent = "Hello, i am a gamer"
+            // appendChild as a mathod attached in the parent tag (body) the determined child tags (modal)
             document.body.appendChild(modal)
             bool = true
         } else if (bool) {
             const modal = document.querySelector('.modal')
+             // removeChild as a mathod removes from the parent tag (body) the determined child tags (modal)
             document.body.removeChild(modal)
             bool = false
         }
     }
-
-
 
 </script>
 
