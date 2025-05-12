@@ -1,8 +1,8 @@
 const about = {
-    /**
-     * @ param render is inside about/home.js files as an arrow function
-     */
-    render: () => `<h2>About</h2>`
+    render: () => `
+    <template id="template-route">
+    <h2>About</h2>
+    </template>`
 }
 
 //The line below brings about to global scope!
