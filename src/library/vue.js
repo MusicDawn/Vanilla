@@ -5,10 +5,12 @@ function ref(initVal) {
     }
 }
 
-function computed(getter){
+function computed(getter) {
     return {
-        get value(){
+        get value() {
             return getter()
         }
     }
 }
+
+export { ref, computed }
