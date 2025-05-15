@@ -6,7 +6,8 @@ class RouterLink extends HTMLElement {
 
 
   connectedCallback() {
-    this.innerHTML = `
+    const template = document.createElement('template')
+    template.innerHTML = `
         <style>
             a
             {
@@ -14,13 +15,11 @@ class RouterLink extends HTMLElement {
                 color: green;
                 padding: 0 10px;
             }
-        </style>
-        <template id="template-rl">
+        </style>        
           <a href="#/">Home</a>
           <a href="#/about">About</a>
-        </template>
-        `
-    const template = document.querySelector('#template-rl')
+       `
+       
     let clone = template.content.cloneNode(true)
     this.appendChild(clone)
   }

@@ -11,7 +11,7 @@ function router() {
     let container = document.getElementById('container')
     let path = window.location.hash.replace('#', '') || '/'
     let content = routes[path]
-    // container.innerHTML = content.render() || home
+    container.innerHTML = ""
     container.appendChild(content.render())
 }
 

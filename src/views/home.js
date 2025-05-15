@@ -6,10 +6,12 @@ const home = {
         const template = document.createElement('template')
         template.innerHTML = `
         <h2>Home</h2>
-        <p>Count: <span id="count">${counter.count.value}</span></p>
-        <p>Doublecount: <span id="doublecount">${counter.doubleCount.value}</span></p>
+        <p>Home Count: <span id="count">${counter.count.value}</span></p>
+        <p>Double Home Count: <span id="doublecount">${counter.doubleCount.value}</span></p>
         <button id="incrementBtn">Increment</button>
         `
+
+       
         let clone = template.content.cloneNode(true)
         const incrementBtn = clone.querySelector('#incrementBtn')
         incrementBtn.addEventListener('click', () => {
