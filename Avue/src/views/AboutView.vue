@@ -1,7 +1,12 @@
     <script setup lang="ts">
-    import { useCounterStore } from '@/stores/counter'
-    const counter = useCounterStore()
-    </script>
+    import { useConfigStore } from '@/stores/config'
+    import { useCounterStoreComp, useCounterStoreOpt } from '@/stores/counter'
+    import { computed } from 'vue'
+    const configStore = useConfigStore()
+
+    const counter = computed(() => configStore.useCompositionAPI ? useCounterStoreComp() : useCounterStoreOpt())
+
+</script>
 
 <template>
   <div class="about">
