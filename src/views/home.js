@@ -6,8 +6,8 @@ const home = {
         const template = document.createElement('template')
         template.innerHTML = `
         <h2>Home</h2>
-        <p>Home Count: <span id="count">${counter.count.value}</span></p>
-        <p>Double Home Count: <span id="doublecount">${counter.doubleCount.value}</span></p>
+        <p>Home Count: <span id="count">${counter.count}</span></p>
+        <p>Double Home Count: <span id="doublecount">${counter.doubleCount}</span></p>
         <button id="incrementBtn">Increment</button>
         `
 
@@ -24,8 +24,8 @@ const home = {
     },
 
     update: () => {
-        document.getElementById('count').innerHTML = counter.count.value
-        document.getElementById('doublecount').innerHTML = counter.doubleCount.value
+        document.getElementById('count').innerHTML = counter.count
+        document.getElementById('doublecount').innerHTML = counter.doubleCount
     }
 }
 
