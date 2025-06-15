@@ -1,5 +1,7 @@
-import { useCounterStore } from "../store/counter.js"
-let counter = useCounterStore
+import { computed } from '../library/vue.js'
+import { useCounterStoreOpt, useCounterStoreComp } from "../store/counter.js"
+
+const counter = computed(() => configStore.useCompositionAPI ? useCounterStoreComp : useCounterStoreOpt)
 
 const about = {
     render: () => {
@@ -15,7 +17,7 @@ const about = {
         incrementBtn.addEventListener('click', () => {
             counter.increment()
             about.update()
-        })
+        }) 
 
         return clone
 

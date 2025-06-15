@@ -3,6 +3,7 @@ import TheWelcome from '../components/TheWelcome.vue'
 import { useConfigStore } from '@/stores/config'
 import { useCounterStoreComp, useCounterStoreOpt } from '@/stores/counter'
 import { computed } from 'vue'
+
 const configStore = useConfigStore()
 
 const counter = computed (()=> configStore.useCompositionAPI ? useCounterStoreComp() : useCounterStoreOpt())
