@@ -14,7 +14,7 @@ const template = document.createElement('template')
 template.innerHTML = `
 <hello-world msg="Hello World"></hello-world>
 <router-link></router-link>
-<button id="toggleAPI" onlick="window.configStore.toggleAPI()">${useCompositionAPI ? 'Composition' : 'Options'}</button>
+<button id="toggleAPI" onclick="window.configStore.toggleAPI()">${useCompositionAPI.value ? 'Composition' : 'Options'}</button>
 <router-view></router-view>
 `
 const App = document.getElementById('app')

@@ -3,15 +3,21 @@ import { useConfigStore } from '../store/config.js'
 import { useCounterStoreComp, useCounterStoreOpt } from "../store/counter.js"
 
 const configStore = useConfigStore
+const useCompositionAPI = computed(() => configStore.useCompositionAPI.value);
 
-const counter = computed(() => configStore.useCompositionAPI ? useCounterStoreComp : useCounterStoreOpt)
+
+const counter = computed(() => useCompositionAPI.value ? useCounterStoreComp : useCounterStoreOpt)
+const getCount = () => useCompositionAPI.value ? counter.value.count.value : counter.value.count 
+const getDoubleCount = () => useCompositionAPI.value ? counter.value.doubleCount.value : counter.value.doubleCount 
+
+
 const home = {
     render: () => {
         const template = document.createElement('template')
         template.innerHTML = `
         <h2>Home</h2>
-        <p>Home Count: <span id="count">${counter.value.count.value}</span></p>
-        <p>Double Home Count: <span id="doublecount">${counter.doubleCount}</span></p>
+        <p>Home Count: <span id="count">${getCount()}</span></p>
+        <p>Double Home Count: <span id="doublecount">${getDoubleCount()}</span></p>
         <button id="incrementBtn">Increment</button>
         `
 
@@ -28,8 +34,8 @@ const home = {
     },
 
     update: () => {
-        document.getElementById('count').innerHTML = counter.value.count.value
-        document.getElementById('doublecount').innerHTML = counter.doubleCount
+        document.getElementById('count').innerHTML = getCount()
+        document.getElementById('doublecount').innerHTML = getDoubleCount()
     }
 }
 
