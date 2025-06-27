@@ -1,36 +1,34 @@
 <script lang="ts">
-export default {
-    data() {
-        return {
-            user: {
-                name: "Panos",
-                city: "Melanes"
-            },
-            nameBool: true
+import { useConfigStore } from '@/stores/config'
+import { defineComponent } from 'vue'
+import CompositionAPIComponent from '@/components/CompositionAPIComponent.vue'
+import OptionsAPIComponenet from '@/components/OptionsAPIComponenet.vue'
+
+export default defineComponent({
+    computed: {
+        currentComponent() {
+            const configStore = useConfigStore()
+            return configStore.useCompositionAPI ? 'CompositionAPIComponent' : 'OptionsAPIComponenet'
         }
     },
-    methods: {
-        toggleName(){
-            // nameBool: true
-            this.nameBool = !this.nameBool
-            this.nameBool ? this.user.name = "Panos" : this.user.name = "Sasa Mpasta"
-            return this.user.name
-        }
+    components: {
+        CompositionAPIComponent,
+        OptionsAPIComponenet
     }
-}
+})
 </script>
 
 <template>
     <div id="title">
-        <h1>Reactive View page</h1>
-        <h2>{{ user.name }}</h2>
-        <button @click="toggleName">Click Me!</button>
+        <h1>Reactive View Page</h1>
+        <component :is="currentComponent">
+            </component>
     </div>
 </template>
 
 
-<style scoped>
+<!-- <style scoped>
 #title {
     background-color: var(--color-background-mute);
 }
-</style>
+</style> -->

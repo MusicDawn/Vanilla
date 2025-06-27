@@ -1,19 +1,21 @@
-function toUppercaseClosure(next) {
+function Α(next) {
   return function (input) {
+    //Το toUpperCase() ειναι ενα method που υπάρχει στην JS και κανει κεφαλαία τα γράμματα.
     next(input.toUpperCase());
   };
 }
 
 function print(input) {
-  // console.log(input)
+  console.log(input)
 }
 
-const upperCased = toUppercaseClosure(print);
+const upperCased = Α(print);
 
-// upperCased("Hello")
+upperCased("Hello")
 
 
 
+// ------------------------------
 //Proxy
 const target = {
   message: "Yoo from proxy",
