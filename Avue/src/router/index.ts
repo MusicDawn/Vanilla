@@ -20,11 +20,13 @@ const router = createRouter({
     {
       path: '/reactive ',
       name: 'reactive',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('../views/ReactiveView.vue'),
     },
+    {
+      path: '/playground ',
+      name: 'playground',
+      component: () => import('../views/PlaygroundView.vue'),
+    }
   ],
 })
 
