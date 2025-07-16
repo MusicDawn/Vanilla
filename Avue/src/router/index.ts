@@ -18,12 +18,12 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue'),
     },
     {
-      path: '/reactive ',
+      path: '/reactive',
       name: 'reactive',
       component: () => import('../views/ReactiveView.vue'),
     },
     {
-      path: '/playground ',
+      path: '/playground',
       name: 'playground',
       component: () => import('../views/PlaygroundView.vue'),
     }

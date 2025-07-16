@@ -9,6 +9,7 @@
 </script>
 
 <template>
+  <h2>ABOUTTEST</h2>
   <div class="about">
     <p>Counter: {{ counter.count }}</p>
     <p>Counter computed: {{ counter.doubleCount }}</p>

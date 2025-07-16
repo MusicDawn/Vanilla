@@ -11,6 +11,7 @@ const counter = computed (()=> configStore.useCompositionAPI ? useCounterStoreCo
 </script>
 
 <template>
+  <h2>HOMETEST</h2>
   <main>
     <p>Counter: {{ counter.count }}</p>
     <p>Counter computed: {{ counter.doubleCount }}</p>

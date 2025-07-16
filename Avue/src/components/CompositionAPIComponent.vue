@@ -13,7 +13,7 @@ export default defineComponent({
 
         const toggleName = () => {
             nameBool.value = !nameBool.value
-            nameBool ? user.name = "Panos" : user.name = "Sasa Mpasta"
+            nameBool.value ? user.name = "Panos" : user.name = "Sasa Mpasta"
             return user.name
         }
 
