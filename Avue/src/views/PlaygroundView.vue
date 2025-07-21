@@ -9,7 +9,7 @@ export default defineComponent({
     computed: {
         currentComponent() {
             const configStore = useConfigStore()
-            return configStore.useCompositionAPI ? 'CompositionAPIComponent' : 'OptionsAPIComponent'
+            return configStore.useCompositionAPI ? 'CompPlayground' : 'OptPlayground'
         }
     },
     components: {
@@ -21,7 +21,7 @@ export default defineComponent({
 
 <template>
     <div id="title">
-        <h1>Plauground Page</h1>
+        <h1>Playground Page</h1>
         <component :is="currentComponent"></component>
     </div>
 </template>
